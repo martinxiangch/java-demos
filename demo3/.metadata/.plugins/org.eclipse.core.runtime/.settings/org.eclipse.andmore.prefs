@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+org.eclipse.andmore.attrSort=logical
+org.eclipse.andmore.fixLegacyEditors=1
+org.eclipse.andmore.sdk=D\:\\Others\\Android\\android-sdk
+org.eclipse.andmore.xmlEditor=true

@@ -1,0 +1,262 @@
+package com.martin.Sdemo;
+
+import java.io.Serializable;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+public class UserInfo implements Serializable {
+    
+    private static final long serialVersionUID = -6756859251200856689L;
+
+    public static final String GENDER_MALE   = "male";
+    public static final String GENDER_FEMALE = "female";
+    
+    
+    //The end userâ€™s unique identifier (matches the prn value in the supplied access token)
+    @JsonProperty("sub")
+    private String userId;
+    
+    // OPTIONAL.  First name of the end user
+    @JsonProperty("given_name")
+    private String firstName;
+
+    // OPTIONAL.  Last name of the end user
+    @JsonProperty("family_name")
+    private String lastName;
+
+    // OPTIONAL.  Middle name of the end user
+    @JsonProperty("middle_name")
+    private String middleName;
+    
+    // OPTIONAL.  Nickname of the end user
+    @JsonProperty("nickname")
+    private String nickname;
+    
+    // OPTIONAL.  Shorthand name by which the end user wishes to be referred to
+    @JsonProperty("preferred_username")
+    private String preferredUsername;
+    
+    // OPTIONAL.  URL for the end userâ€™s profile page
+    @JsonProperty("profile")
+    private String profileUrl;
+    
+    // OPTIONAL.  URL for the end userâ€™s picture
+    @JsonProperty("picture")
+    private String pictureUrl;
+    
+    // OPTIONAL.  URL for the end userâ€™s website
+    @JsonProperty("website")
+    private String websiteUrl;
+    
+    // OPTIONAL.  Email address for the end user
+    @JsonProperty("email")
+    private String email;
+    
+    // OPTIONAL.  Boolean value indicating if the end userâ€™s email address has been verified
+    @JsonProperty("email_verified")
+    private Boolean emailVerified;
+    
+    // OPTIONAL.  female or male
+    @JsonProperty("gender")
+    private String gender;
+    
+    // OPTIONAL.  YYYY-MM-DD format
+    @JsonProperty("birthdate")
+    private Date birthdate;
+    
+    // OPTIONAL.  The end userâ€™s time zone (ex. America/Los_Angeles)
+    @JsonProperty("zoneinfo")
+    private String timezoneInfo;
+    
+    // OPTIONAL.  The end userâ€™s locale separated by a dash symbol (ex. en-US)
+    @JsonProperty("locale")
+    private String locale;
+    
+    // OPTIONAL.  The end userâ€™s preferred phone number
+    @JsonProperty("phone_number")
+    private String phoneNumber;
+    
+    // OPTIONAL.  Boolean value indicating if the end userâ€™s phone number has been verified
+    @JsonProperty("phone_number_verified")
+    private Boolean phoneNumberVerified;
+    
+    
+    // OPTIONAL.  The number of seconds since the beginning of 1970 representing the last time the user information was updated
+    @JsonProperty("updated_at")
+    private Long updatedAt;
+    
+    /*
+     * OPTIONAL.  The end userâ€™s full name
+     */
+    @JsonProperty("name")
+    public String getFullName(){
+        StringBuilder sb = new StringBuilder();
+        
+        if (getFirstName() != null && !getFirstName().trim().isEmpty()){
+            sb.append(getFirstName().trim());
+        }
+        
+        if (getMiddleName() != null && !getMiddleName().trim().isEmpty()){
+            if (sb.length() > 0) sb.append(" ");
+            sb.append(getMiddleName().trim());
+        }
+        
+        if (getLastName() != null && !getLastName().trim().isEmpty()){
+            if (sb.length() > 0) sb.append(" ");
+            sb.append(getLastName().trim());
+        }
+        
+        return sb.toString();
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
+    public String getPreferredUsername() {
+        return preferredUsername;
+    }
+
+    public void setPreferredUsername(String preferredUsername) {
+        this.preferredUsername = preferredUsername;
+    }
+
+    public String getProfileUrl() {
+        return profileUrl;
+    }
+
+    public void setProfileUrl(String profileUrl) {
+        this.profileUrl = profileUrl;
+    }
+
+    public String getPictureUrl() {
+        return pictureUrl;
+    }
+
+    public void setPictureUrl(String pictureUrl) {
+        this.pictureUrl = pictureUrl;
+    }
+
+    public String getWebsiteUrl() {
+        return websiteUrl;
+    }
+
+    public void setWebsiteUrl(String websiteUrl) {
+        this.websiteUrl = websiteUrl;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Boolean getEmailVerified() {
+        return emailVerified;
+    }
+
+    public void setEmailVerified(Boolean emailVerified) {
+        this.emailVerified = emailVerified;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public Date getBirthdate() {
+        return birthdate;
+    }
+
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
+    }
+
+    public String getTimezoneInfo() {
+        return timezoneInfo;
+    }
+
+    public void setTimezoneInfo(String timezoneInfo) {
+        this.timezoneInfo = timezoneInfo;
+    }
+
+    public String getLocale() {
+        return locale;
+    }
+
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public Boolean getPhoneNumberVerified() {
+        return phoneNumberVerified;
+    }
+
+    public void setPhoneNumberVerified(Boolean phoneNumberVerified) {
+        this.phoneNumberVerified = phoneNumberVerified;
+    }
+
+
+    public Long getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Long updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+    
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return super.toString();
+    }
+}

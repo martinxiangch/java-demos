@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.martin.zookeeper.ZKeeper.java&apos; to &apos;ZKeeperAdaptor.java&apos;&#x0D;&#x0A;- Original project: &apos;ShiroDemo&apos;&#x0D;&#x0A;- Original element: &apos;com.martin.zookeeper.ZKeeper.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.martin.zookeeper.ZKeeperAdaptor.java&apos;" description="Rename compilation unit &apos;ZKeeper.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src\/main\/java&lt;com.martin.zookeeper{ZKeeper.java" name="ZKeeperAdaptor.java" references="false" stamp="1504056596752" version="1.0"/>
+</session>

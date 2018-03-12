@@ -1,0 +1,14 @@
+server:
+  port: 8000
+
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    data: classpath:data.sql
+    schema: classpath:schema.sql
+    

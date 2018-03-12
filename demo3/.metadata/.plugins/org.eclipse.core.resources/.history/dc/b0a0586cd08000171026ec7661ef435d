@@ -1,0 +1,97 @@
+package com.martin.Sdemo;
+
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.AuthenticationInfo;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.config.Ini;
+import org.apache.shiro.config.IniSecurityManagerFactory;
+import org.apache.shiro.mgt.DefaultSecurityManager;
+import org.apache.shiro.mgt.SecurityManager;
+import org.apache.shiro.session.mgt.DefaultSessionManager;
+import org.apache.shiro.subject.Subject;
+import org.apache.shiro.util.Factory;
+import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+
+@SpringBootApplication
+public class ShiroDemoApplication implements CommandLineRunner{
+
+    public static void main(String[] args) {
+        SpringApplication.run(ShiroDemoApplication.class, args);
+    }
+
+    /**
+     * Create security manager option1
+     * 
+     * */
+    public void securityManager() {
+        Factory<org.apache.shiro.mgt.SecurityManager> factory =
+                new IniSecurityManagerFactory("classpath:shiro.ini");
+        org.apache.shiro.mgt.SecurityManager securityManager = factory.getInstance();
+        SecurityUtils.setSecurityManager(securityManager);
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken("Martin", "IGTtest1");
+        try {
+            // 4、登录，即身份验证
+            subject.login(token);
+            System.out.println("login success!");
+        } catch (AuthenticationException e) {
+           e.printStackTrace();
+        }
+        // Assert.assertEquals(true, subject.isAuthenticated()); //断言用户已经登录
+        // 6、退出
+        subject.logout();
+        
+        AuthenticationInfo authenticationInfo = securityManager.authenticate(token);
+
+        System.out.println(authenticationInfo+","+ new String((char[])authenticationInfo.getCredentials()));
+        
+    }
+
+    @Override
+    public void run(String... arg0) throws Exception {
+        // TODO Auto-generated method stub
+        System.out.println("begin to run console");
+        securityManager();
+        /*
+        SecurityManager securityManager=getSecurityManager();
+        SecurityUtils.setSecurityManager(securityManager);
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken token = new UsernamePasswordToken("martin", "123");
+        try {
+            // 4、登录，即身份验证
+            subject.login(token);
+            System.out.println("login success!");
+        } catch (AuthenticationException e) {
+           e.printStackTrace();
+        }
+        // Assert.assertEquals(true, subject.isAuthenticated()); //断言用户已经登录
+        // 6、退出
+        subject.logout();
+        */
+        System.out.println("complete run console");
+        System.exit(0);
+    }
+    
+//    @Bean
+//    public com.martin.Sdemo.UserRealm userRealm(){
+//        com.martin.Sdemo.UserRealm myrealm = new com.martin.Sdemo.UserRealm();
+//        return myrealm;
+//    }
+    
+//    
+//    @Bean
+//    public SecurityManager getSecurityManager() {
+//        DefaultSecurityManager defaultSecurityManager=new DefaultSecurityManager();
+//        defaultSecurityManager.setRealm(userRealm());
+//        System.out.println("create security manager");
+//        return defaultSecurityManager;
+//        
+//    }
+
+}

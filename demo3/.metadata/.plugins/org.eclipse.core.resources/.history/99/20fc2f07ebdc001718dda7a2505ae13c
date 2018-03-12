@@ -1,0 +1,227 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<!-- Inherit defaults from Platform Microservice Starter Parent -->
+	<parent>
+		<groupId>com.igt.platform.core</groupId>
+		<artifactId>platform-starter-parent</artifactId>
+		<version>1.0.0</version>
+	</parent>
+
+	<groupId>com.igt.platform.ui</groupId>
+	<artifactId>resort-wallet-ui</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>Resort Wallet UI Facade and Web Client</name>
+
+
+	<dependencies>
+	
+		<!-- Internal -->
+	    <dependency>
+			<groupId>com.igt.platform.service</groupId>
+			<artifactId>resort-wallet-registration-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.igt.platform.core</groupId>
+			<artifactId>security-api</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<!-- 3rd party -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Tomcat embedded container -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-jersey</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-rs-client</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.fasterxml.jackson.jaxrs</groupId>
+			<artifactId>jackson-jaxrs-json-provider</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>com.sun.xml.bind</groupId>
+			<artifactId>jaxb-xjc</artifactId>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>com.google.code.maven-replacer-plugin</groupId>
+                    <artifactId>replacer</artifactId>
+                    <version>1.5.2</version>
+                    <executions>
+                        <execution>
+                            <id>default-cli</id>
+                            <phase>none</phase>
+                            <goals>
+                                <goal>replace</goal>
+                            </goals>
+                            <configuration>
+                                <filesToInclude>src/main/docker/Dockerfile</filesToInclude>
+                                <replacements>
+                                    <replacement>
+                                        <token>${project.artifactId}-[\w\.\-]*.jar</token>
+                                        <value>${project.artifactId}-${project.version}.jar</value>
+                                    </replacement>
+                                </replacements>
+                            </configuration>
+                        </execution>
+                    </executions>
+                    
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<excludes>
+						<exclude>ngapp/**</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jar-plugin</artifactId>
+				<version>3.0.0</version>
+				<configuration>
+					<excludes>
+						<exclude>ngapp/**</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.4.1</version>
+                <configuration>
+                    <tagNameFormat>@{project.version}</tagNameFormat>
+                    <preparationGoals>clean verify replacer:replace scm:checkin -Dmessage="[maven-release-plugin] prepare release"</preparationGoals>
+                    <completionGoals>clean verify replacer:replace scm:checkin -Dmessage="[maven-release-plugin] prepare for next development iteration"</completionGoals>
+                </configuration>
+            </plugin>
+
+			<!-- commented out to avoid problems with Jenkins build (npm and angular cli are not available there) 
+			     if commented have to run manually "ng build" in src\main\ngapp\ folder. 
+			     Compiled Angular UI app would be recreated in src\main\resources\static\ folder. 
+			     if uncommented - what is recomended on local environment just "run mvn clean package" UI would be rebuit 
+				- jar would be recreated 
+			-->
+			<!-- 
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.5.0</version>
+				<executions>
+					<execution>
+						<id>exec-npm-install</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<workingDirectory>${project.basedir}/src/main/ngapp</workingDirectory>
+							<executable>npm</executable>
+							<arguments>
+								<argument>install</argument>
+							</arguments>
+						</configuration>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>exec-npm-ng-build</id>
+						<phase>generate-sources</phase>
+						<configuration>
+							<workingDirectory>${project.basedir}/src/main/ngapp</workingDirectory>
+							<executable>ng</executable>
+							<arguments>
+								<argument>build</argument>
+							</arguments>
+						</configuration>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		 -->
+
+		</plugins>
+
+	</build>
+
+	<repositories>
+		<repository>
+			<id>arcus-releases-repository</id>
+			<url>http://nexus/nexus/content/repositories/releases/</url>
+		</repository>
+
+		<repository>
+			<id>arcus-snapshots-repository</id>
+			<url>http://nexus/nexus/content/repositories/snapshots/</url>
+		</repository>
+	</repositories>
+
+	<scm>
+		<developerConnection>scm:git:ssh://git@systems.stash.igt.com:7999/afs/resort-wallet-ui.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+
+</project>

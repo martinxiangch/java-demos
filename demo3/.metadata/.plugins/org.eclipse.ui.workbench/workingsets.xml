@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workingSetManager>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1513567176362_12" label="ResortWallet" name="ResortWallet">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/resort-wallet" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/resort-wallet-registration-api" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/resort-wallet-registration-service" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/resort-wallet-report-api" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/resort-wallet-report-service" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1513567301527_13" label="security" name="security">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/security" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1513567324175_14" label="platform-base" name="platform-base">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/platform-base" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/thirdparty-dependencies" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/platform-starter-parent" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/application-parent" type="4"/>
+</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1513571124143_18" label="Resort Wallet UI" name="Resort Wallet UI"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1500254901146_0" label="Window Working Set" name="Aggregate for window 1500254901146"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1500260481786_1" label="Window Working Set" name="Aggregate for window 1500260481786"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1511753299380_12" label="Multiple Working Sets" name="Aggregate:javaDemo:resort-wallet:"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1511753343684_13" label="Multiple Working Sets" name="Aggregate:javaDemo:resort-wallet:shiro-root:"/>
+<workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1511772762547_16" label="Multiple Working Sets" name="Aggregate:javaDemo:platform-base:resort-wallet:security:shiro-root:"/>
+</workingSetManager>

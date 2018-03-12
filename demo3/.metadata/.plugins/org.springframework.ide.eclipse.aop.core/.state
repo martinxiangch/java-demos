@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="security-integration"/>
+<aop-project name="resort-wallet-registration-service"/>
+<aop-project name="samples-spring-xml"/>
+<aop-project name="shiro-spring-boot-example-master"/>
+<aop-project name="EurekaServerTest2"/>
+<aop-project name="shiro-spring"/>
+<aop-project name="ShiroDemo"/>
+<aop-project name="shiro-spring-boot-starter"/>
+<aop-project name="ShiroTest5"/>
+<aop-project name="ShiroTest1"/>
+<aop-project name="resort-wallet-report-service"/>
+<aop-project name="DBTest1"/>
+<aop-project name="security-client"/>
+<aop-project name="MyWebSockerDemo"/>
+<aop-project name="shiro-spring-boot-web-starter"/>
+<aop-project name="samples-sprhib"/>
+<aop-project name="taskexecutor"/>
+<aop-project name="samples-spring-client"/>
+<aop-project name="ShiroTest4"/>
+<aop-project name="EurekaClientTest"/>
+<aop-project name="MartinDemo"/>
+<aop-project name="MyDockerRest"/>
+<aop-project name="springDemo"/>
+<aop-project name="ShiroTest3"/>
+<aop-project name="samples-spring"/>
+<aop-project name="EurekaServerTest"/>
+<aop-project name="security-service"/>
+<aop-project name="EurekaServerLogin"/>
+<aop-project name="samples-spring-boot"/>
+<aop-project name="samples-spring-mvc"/>
+<aop-project name="samples-spring-boot-web"/>
+<aop-project name="EurekaConsumer1">
+<aspect-definition advice-class-name="com.netflix.hystrix.contrib.javanica.aop.aspectj.HystrixCommandAspect" advice-method-name="methodsAnnotatedWithHystrixCommand(org.aspectj.lang.ProceedingJoinPoint)" advice-type="AROUND" aspect-end-line-number="-1" aspect-name="hystrixCommandAspect" aspect-start-line-number="-1" factory-id="org.springframework.ide.eclipse.aop.core.annotationAspectDefinitionElementFactory" file="/EurekaConsumer1/src/main/java/com/martin/EurekaConsumer/EurekaConsumer1Application.java" pointcut-expression="hystrixCommandAnnotationPointcut() || hystrixCollapserAnnotationPointcut()" proxy-target-class="false">
+<aop-reference advice-type="AROUND" bean="1:BeansModel|2:EurekaConsumer1|3:java:com.martin.EurekaConsumer.EurekaConsumer1Application|8:myController:14" bean-file="/EurekaConsumer1/src/main/java/com/martin/EurekaConsumer/MyController.java" bean-start-line="14" factory-id="org.springframework.ide.eclipse.aop.core.aopReferenceElementFactory" file="/EurekaConsumer1/src/main/java/com/martin/EurekaConsumer/EurekaConsumer1Application.java" source="=EurekaConsumer1/C:\/Users\/xiangc\/.m2\/repository\/com\/netflix\/hystrix\/hystrix-javanica\/1.5.12\/hystrix-javanica-1.5.12.jar&lt;com.netflix.hystrix.contrib.javanica.aop.aspectj(HystrixCommandAspect.class[HystrixCommandAspect~methodsAnnotatedWithHystrixCommand~Lorg.aspectj.lang.ProceedingJoinPoint;" source-start-line="-1" target="=EurekaConsumer1/src\/main\/java&lt;com.martin.EurekaConsumer{MyController.java[MyController~findById" target-start-line="28"/>
+</aspect-definition>
+</aop-project>
+<aop-project name="ShiroTest2"/>
+<aop-project name="ShiroTest6"/>
+<aop-project name="resort-wallet-report"/>
+<aop-project name="springstarterDemo"/>
+</aop-reference-model>

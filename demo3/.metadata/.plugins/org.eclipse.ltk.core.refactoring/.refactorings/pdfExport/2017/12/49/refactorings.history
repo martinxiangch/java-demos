@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 2 elements to &apos;static&apos;&#x0D;&#x0A;- Original project: &apos;pdfExport&apos;&#x0D;&#x0A;- Destination element: &apos;static&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     font&#x0D;&#x0A;     images" description="Copy folders" element1="src/main/resources/static/font" element2="src/main/resources/static/images" files="0" flags="589830" folders="2" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1512454952655" target="/resort-wallet-report/src/main/resources/static" units="0" version="1.0"/>
+</session>

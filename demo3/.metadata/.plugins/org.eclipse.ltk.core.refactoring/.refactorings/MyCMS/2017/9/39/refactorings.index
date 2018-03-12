@@ -1,0 +1,10 @@
+1506410124565	Encapsulate field 'uid'
+1506410128468	Encapsulate field 'name'
+1506410134466	Encapsulate field 'age'
+1506410141546	Encapsulate field 'pass'
+1506417767464	Encapsulate field 'tableName'
+1506417775642	Encapsulate field 'columnlist'
+1506418052177	Encapsulate field 'tid'
+1506479591563	Move compilation unit
+1506479737867	Move compilation unit
+1506479747480	Delete element

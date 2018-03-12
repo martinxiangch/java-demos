@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="D:\Others\java\workspace"/>
+		<item value="D:\Others\demo\BiditectionalClient"/>
+		<item value="C:\WorkStation\Project\SourceCode\platformC\resort-wallet\resort-wallet-ui\resort-wallet-ui"/>
+		<item value="C:\WorkStation\Project\SourceCode\platformC\resort-wallet\resort-wallet"/>
+		<item value="C:\WorkStation\Project\SourceCode\platformC\servicebroker\servicebroker"/>
+		<item value="C:\WorkStation\Project\SourceCode\platformC"/>
+	</list>
+	<section name="CleanDialogSettings">
+		<item value="500" key="DIALOG_WIDTH"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+		<item value="402" key="DIALOG_HEIGHT"/>
+		<item value="2270" key="DIALOG_X_ORIGIN"/>
+		<item value="242" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="ExternalProjectImportWizard">
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\WorkStation\Project\SourceCode\platformC\platform-base\security"/>
+			<item value="C:\WorkStation\Project\SourceCode\platformC\resort-wallet\resort-wallet"/>
+			<item value="C:\WorkStation\Project\SourceCode\platformC\resort-wallet\resort-wallet\resort-wallet-registration-api"/>
+			<item value="C:\WorkStation\Project\SourceCode\platformC\resort-wallet\resort-wallet\resort-wallet-registration-service"/>
+			<item value="C:\WorkStation\Project\SourceCode\platformC"/>
+			<item value="D:\Others\demo\ionic\PCAgent\pcAgent"/>
+			<item value="D:\Others\demo\BiditectionalClient"/>
+		</list>
+		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
+		</list>
+	</section>
+	<section name="NewWizardAction">
+		<item value="org.springsource.ide.eclipse.commons.gettingstarted.wizard.boot.NewSpringBootWizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="org.springsource.ide.eclipse.boot.wizards.category"/>
+		</list>
+	</section>
+</section>

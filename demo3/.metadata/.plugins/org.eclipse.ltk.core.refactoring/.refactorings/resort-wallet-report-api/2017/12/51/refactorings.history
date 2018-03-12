@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.igt.platform.resortwallet.report.model.ReportResponse&apos; to &apos;UserAccessResponse&apos;&#x0D;&#x0A;- Original project: &apos;resort-wallet-report-api&apos;&#x0D;&#x0A;- Original element: &apos;com.igt.platform.resortwallet.report.model.ReportResponse&apos;&#x0D;&#x0A;- Renamed element: &apos;com.igt.platform.resortwallet.report.model.UserAccessResponse&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ReportResponse&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.igt.platform.resortwallet.report.model{ReportResponse.java[ReportResponse" matchStrategy="1" name="UserAccessResponse" qualified="false" references="true" similarDeclarations="false" stamp="1513576105595" textual="false" version="1.0"/>
+</session>

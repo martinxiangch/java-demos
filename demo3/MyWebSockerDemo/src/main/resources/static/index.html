@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="./js/sockjs.js"></script>
+<script type="text/javascript">
+	var url = "localhost:8080";
+	var websocket = null;
+	if ('WebSocket' in window) {
+		//websocket = new WebSocket("ws://" + url + "/ws");
+		websocket = new SockJS("http://" + url + "/sockjs/ws");
+	} else {
+		websocket = new SockJS("http://" + url + "/sockjs/ws");
+	}
+	websocket.onopen = onOpen;
+	websocket.onmessage = onMessage;
+	websocket.onerror = onError;
+	websocket.onclose = onClose;
+
+	function onOpen(openEvent) {
+		document.getElementById("console").innerHTML = document.getElementById("console").innerHTML+ "OPEN<br/>";
+	}
+
+	function onMessage(event) {
+		document.getElementById("console").innerHTML = document.getElementById("console").innerHTML+ event.data+"<br/>";
+	}
+	function onError() {
+	}
+	function onClose() {
+		document.getElementById("console").innerHTML = document.getElementById("console").innerHTML+ "CLOSE<br/>";
+	}
+
+	function doSend() {
+		console.log(websocket.readyState);
+		if (websocket.readyState == 1) {
+			var msg = document.getElementById("message").value;
+			websocket.send(msg);
+		} else {
+			alert("连接失败!");
+		}
+	}
+	
+	
+	function disconnect(){
+		if (websocket != null) {
+			websocket.close();
+			websocket = null;
+        }
+	}
+	
+	function reconnect(){
+		if (websocket != null) {
+			websocket.close();
+			websocket = null;
+        }
+		if ('WebSocket' in window) {
+			websocket = new WebSocket("ws://" + url + "/ws");
+		} else {
+			websocket = new SockJS("http://" + url + "/sockjs/ws");
+		}
+		websocket.onopen = onOpen;
+		websocket.onmessage = onMessage;
+		websocket.onerror = onError;
+		websocket.onclose = onClose;
+	}
+</script>
+</head>
+<body>
+	<div>
+		<button id="disconnect" onclick="disconnect()">disconnect</button>
+		<button id="send" onclick="doSend()">send</button>
+		<button id="reconnect" onclick="reconnect()">reconnect</button>
+	</div>
+    <div>
+       <textarea id="message" style="width: 350px">Here is a message!</textarea>
+    </div>
+    <div>logs：</div>
+	<p id="console" width="600px"></p>
+</body>
+</html>

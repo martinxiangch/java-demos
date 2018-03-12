@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ShiroTest1/src/main/resources/shiro.properties&apos; to &apos;shiro-users.properties&apos;" description="Rename resource &apos;shiro.properties&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/shiro.properties" name="shiro-users.properties" stamp="1510299087923" updateReferences="true"/>
+</session>
