@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item</a></li>
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+                <li><a href="">More navigation</a></li>
+            </ul>
+            <ul class="nav nav-sidebar">
+                <li><a href="">Nav item again</a></li>
+                <li><a href="">One more nav</a></li>
+                <li><a href="">Another nav item</a></li>
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">TableList</h1>
+            <div class="row placeholders">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="inputEmail3" class="col-sm-2 control-label">Table Name</label>
+                        <div class="col-sm-10">
+                            <input type="text" [(ngModel)]="tableName" class="form-control" name="tableName" placeholder="Table Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputPassword3" class="col-sm-2 control-label">Column List</label>
+                        <div class="col-sm-10">
+                            <input type="text" [(ngModel)]="columnList" class="form-control" name="columnList" placeholder="e.g. id,name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-10 col-md-2">
+                            <button type="button" (click)="add()" class="btn btn-primary">Create / Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <h2 class="sub-header">Section title</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Column List</th>
+                            <th>Create Time</th>
+                            <th>Operation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let item of tablemanager.tablelist">
+                            <td>{{item.tid}}</td>
+                            <td>{{item.tableName}}</td>
+                            <td>{{item.columnlist}}</td>
+                            <td>{{item.createTime || "2017-10-09 09:00:20"}} </td>
+                            <td>
+                                <button type="button" (click)="delete(item.tid)" class="btn btn-primary">delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
